@@ -1,6 +1,44 @@
+import { Library, Users, Download, type LucideIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Image from "next/image";
 import { type JSX } from "react";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
+type FeatureProps = {
+  id: string;
+  title: string;
+  description: string;
+  icon: LucideIcon;
+};
+
+const features: FeatureProps[] = [
+  {
+    id: "a1b2c3d4e5f6g7h8i9j0k1l2",
+    title: "100K+ models",
+    description:
+      "Access our vast library of community-created 3D models, from practical tools to artistic creations.",
+    icon: Library,
+  },
+  {
+    id: "m3n4o5p6q7r8s9t0u1v2w3x4",
+    title: "Active Community",
+    description:
+      "Join thousands of makers who share tips, provide feedback, and collaborate on projects.",
+    icon: Users,
+  },
+  {
+    id: "y5z6a7b8c9d0e1f2g3h4i5j6k7",
+    title: "Free to Use",
+    description:
+      "Most models are free to download, with optional premium features for power users.",
+    icon: Download,
+  },
+];
 
 const About = (): JSX.Element => {
   return (
@@ -31,6 +69,28 @@ const About = (): JSX.Element => {
               meets technology, enabling anyone to bring their ideas to life
               through 3D printing.
             </p>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-10">
+        <Container>
+          <div className="grid md:grid-cols-3 gap-7 lg:gap-10">
+            {features.map((item: FeatureProps): JSX.Element => {
+              const IconComponent: LucideIcon = item.icon;
+
+              return (
+                <Card key={item.id}>
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-3.5">
+                      <IconComponent />
+                      <span>{item.title}</span>
+                    </CardTitle>
+                    <CardDescription>{item.description}</CardDescription>
+                  </CardHeader>
+                </Card>
+              );
+            })}
           </div>
         </Container>
       </section>
