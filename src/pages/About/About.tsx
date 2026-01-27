@@ -8,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
 type FeatureProps = {
   id: string;
@@ -92,6 +93,28 @@ const About = (): JSX.Element => {
               );
             })}
           </div>
+        </Container>
+      </section>
+
+      <section>
+        <Container className="space-y-5 max-w-200">
+          <h3 className="text-red font-bold text-5xl leading-tight">
+            Our vision
+          </h3>
+          <p className="text-xl md:text-2xl">
+            At PrintForge, we believe that 3D printing is revolutionizing the
+            way we create, prototype, and manufacture. Our platform serves as a
+            bridge between designers and makers, enabling the sharing of
+            knowledge and creativity that pushes the boundaries of what&apos;s
+            possible with 3D printing.
+          </p>
+          <Separator className="w-61.25! h-0.5! mx-auto" />
+          <p className="text-xl md:text-2xl">
+            Whether you&apos;re a hobbyist looking for your next weekend
+            project, an educator seeking teaching materials, or a professional
+            designer wanting to share your creations, PrintForge provides the
+            tools and community to support your journey in 3D printing.
+          </p>
         </Container>
       </section>
     </>
