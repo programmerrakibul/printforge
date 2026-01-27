@@ -9,13 +9,13 @@ import Container from "../ui/Container";
 import Image from "next/image";
 import NavLink from "../ui/NavLink";
 
-type NAV_LINKS_Props = {
+type NAV_LINK_Props = {
   id: number;
   label: string;
   href: string;
 };
 
-const NAV_LINKS: NAV_LINKS_Props[] = [
+const NAV_LINKS: NAV_LINK_Props[] = [
   {
     id: 1,
     label: "Home",
@@ -49,7 +49,7 @@ const Navbar = (): JSX.Element => {
           </Link>
           <NavigationMenuList className="gap-5">
             {NAV_LINKS.map(
-              (item: NAV_LINKS_Props): JSX.Element => (
+              (item: NAV_LINK_Props): JSX.Element => (
                 <NavigationMenuItem key={item.id}>
                   <NavLink href={item.href} className="nav_link">
                     {item.label}

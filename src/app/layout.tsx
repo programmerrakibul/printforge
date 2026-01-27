@@ -29,7 +29,7 @@ const RootLayout = ({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header>
+        <header className="sticky top-0 backdrop-blur-sm bg-primary-foreground/40">
           <Navbar />
         </header>
         <main className="space-y-16 md:space-y-20 min-h-[80dvh]">
