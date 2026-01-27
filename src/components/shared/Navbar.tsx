@@ -7,6 +7,7 @@ import {
 import Link from "next/link";
 import Container from "../ui/Container";
 import Image from "next/image";
+import NavLink from "../ui/NavLink";
 
 type NAV_LINKS_Props = {
   id: number;
@@ -50,9 +51,9 @@ const Navbar = (): JSX.Element => {
             {NAV_LINKS.map(
               (item: NAV_LINKS_Props): JSX.Element => (
                 <NavigationMenuItem key={item.id}>
-                  <Link href={item.href} className="font-semibold text-sm">
+                  <NavLink href={item.href} className="nav_link">
                     {item.label}
-                  </Link>
+                  </NavLink>
                 </NavigationMenuItem>
               ),
             )}

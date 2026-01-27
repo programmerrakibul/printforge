@@ -126,3 +126,12 @@
     cursor: pointer;
   }
 }
+
+.nav_link {
+  @apply font-semibold text-sm transition-all duration-300 border-b-2 border-transparent pb-1;
+}
+
+.nav_link:hover,
+.nav_link.active {
+  @apply text-[#F77429]! border-[#F77429];
+}
