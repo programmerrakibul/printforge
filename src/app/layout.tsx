@@ -32,7 +32,9 @@ const RootLayout = ({
         <header>
           <Navbar />
         </header>
-        <main>{children}</main>
+        <main className="space-y-16 md:space-y-20 min-h-[80dvh]">
+          {children}
+        </main>
       </body>
     </html>
   );
