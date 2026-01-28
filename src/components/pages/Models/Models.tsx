@@ -13,12 +13,14 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import NavLink from "@/components/ui/NavLink";
-import type { ModelProps, CategoryProps } from "@/services/api";
 import { Heart } from "lucide-react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { type JSX } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { Button } from "@/components/ui/button";
+
+import type { ModelProps, CategoryProps } from "@/services/api";
+import type { JSX } from "react";
+import clsx from "clsx";
 
 type ModelsProps = {
   categories: CategoryProps[] | [];
@@ -26,7 +28,22 @@ type ModelsProps = {
 };
 
 const Models = ({ categories = [], models = [] }: ModelsProps): JSX.Element => {
-  const router = useRouter();
+  const { push, replace } = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const catFilter = searchParams?.get("category");
+
+  const handleFilter = (term?: string): void => {
+    const params = new URLSearchParams(searchParams?.toString());
+
+    if (term) {
+      params.set("category", term);
+    } else {
+      params.delete("category");
+    }
+
+    replace(`${pathname}?${params.toString()}`);
+  };
 
   return (
     <>
@@ -34,21 +51,30 @@ const Models = ({ categories = [], models = [] }: ModelsProps): JSX.Element => {
         <Container>
           <div className="grid md:grid-cols-12 gap-7">
             <aside className="md:col-span-2 overflow-x-auto md:sticky top-24 z-10">
-              <NavigationMenu>
-                <NavigationMenuList className="md:flex-col gap-3.5 justify-start overflow-x-auto! max-w-full">
+              <NavigationMenu className="max-w-full block">
+                <NavigationMenuList className="md:flex-col gap-1.5 justify-start overflow-x-auto! max-w-full">
                   <NavigationMenuItem className="w-full">
-                    <NavLink href="/3d-models" className="sidebar_nav">
+                    <Button
+                      onClick={() => handleFilter()}
+                      variant={"ghost"}
+                      className={clsx("sidebar_nav", {
+                        active: catFilter === null,
+                      })}
+                    >
                       All
-                    </NavLink>
+                    </Button>
                   </NavigationMenuItem>
                   {categories.map((cat) => (
                     <NavigationMenuItem key={cat.id} className="w-full">
-                      <NavLink
-                        href={`/3d-models?category=${cat.slug}`}
-                        className="sidebar_nav"
+                      <Button
+                        onClick={() => handleFilter(cat.slug)}
+                        variant={"ghost"}
+                        className={clsx("sidebar_nav", {
+                          active: cat.slug === catFilter,
+                        })}
                       >
                         {cat.displayName}
-                      </NavLink>
+                      </Button>
                     </NavigationMenuItem>
                   ))}
                 </NavigationMenuList>
@@ -60,7 +86,11 @@ const Models = ({ categories = [], models = [] }: ModelsProps): JSX.Element => {
                   <Card
                     key={model.id}
                     className="pt-0 cursor-pointer"
-                    onClick={() => router.push(`/3d-models/${model.id}`)}
+                    onClick={() =>
+                      push(
+                        `/3d-models/${model.id}${catFilter === null ? "" : `?category=${catFilter}`}`,
+                      )
+                    }
                   >
                     <figure>
                       <Image

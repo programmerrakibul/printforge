@@ -1,10 +1,15 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import Container from "@/components/ui/Container";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import { type JSX } from "react";
 
 const Home = (): JSX.Element => {
+  const router = useRouter();
+
   return (
     <>
       <section className="py-10">
@@ -18,7 +23,12 @@ const Home = (): JSX.Element => {
               Join our community of creators and explore a vast library of
               user-submitted models.
             </p>
-            <Button size="lg" variant="outline" className="mt-14 text-base md:text-lg">
+            <Button
+              onClick={() => router.push("/3d-models")}
+              size="lg"
+              variant="outline"
+              className="mt-14 text-base md:text-lg"
+            >
               Browse models
             </Button>
           </div>

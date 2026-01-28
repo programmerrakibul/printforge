@@ -1,10 +1,16 @@
-import Models from "@/pages/Models/Models";
+import Models from "@/components/pages/Models/Models";
 import { getAllModels, getCategories } from "@/services/api";
-import { type JSX } from "react";
 
-const page = async (): Promise<JSX.Element> => {
+import type { JSX } from "react";
+
+const page = async ({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | undefined }>;
+}): Promise<JSX.Element> => {
+  const { category } = await searchParams;
   const categories = await getCategories();
-  const models = await getAllModels();
+  const models = await getAllModels({ category });
 
   return (
     <>

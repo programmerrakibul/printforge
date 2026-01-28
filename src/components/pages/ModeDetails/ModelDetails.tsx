@@ -1,3 +1,5 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import Container from "@/components/ui/Container";
 import { format } from "date-fns";
@@ -7,8 +9,11 @@ import Link from "next/link";
 
 import { type ModelProps } from "@/services/api";
 import { type JSX } from "react";
+import { useSearchParams } from "next/navigation";
 
 const ModelDetails = ({ model }: { model: ModelProps }): JSX.Element => {
+  const searchParams = useSearchParams();
+  const catQuery = searchParams?.get("category");
   const {
     name,
     description,
@@ -26,7 +31,10 @@ const ModelDetails = ({ model }: { model: ModelProps }): JSX.Element => {
             <Image src={image} alt={name} width={300} height={300} />
           </div>
           <div className="flex-1 space-y-3.5">
-            <Link href={"/3d-models"} className="inline-block">
+            <Link
+              href={`/3d-models${catQuery === null ? "" : `?category=${catQuery}`}`}
+              className="inline-block"
+            >
               Back to Models
             </Link>
             <p className="flex items-center gap-2">

@@ -1,4 +1,4 @@
-import ModelDetails from "@/pages/ModeDetails/ModelDetails";
+import ModelDetails from "@/components/pages/ModeDetails/ModelDetails";
 import { getModelById, type ModelProps } from "@/services/api";
 
 const page = async ({ params }: { params: Promise<{ id: string }> }) => {

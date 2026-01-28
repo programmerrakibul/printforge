@@ -8,6 +8,10 @@ export type CategoryProps = {
   slug: string;
 };
 
+type GetAllModelsProps = {
+  category?: string;
+};
+
 export type ModelProps = {
   id: number;
   name: string;
@@ -24,10 +28,18 @@ export const getCategories = async (): Promise<CategoryProps[]> => {
   return categoriesData as CategoryProps[];
 };
 
-export const getAllModels = async (): Promise<ModelProps[]> => {
+export const getAllModels = async ({
+  category,
+}: GetAllModelsProps): Promise<ModelProps[]> => {
   await sleep(1000);
 
-  return modelsData as ModelProps[];
+  let filteredModels = [...modelsData];
+
+  if (category?.trim()) {
+    filteredModels = modelsData.filter((model) => model.category === category);
+  }
+
+  return filteredModels as ModelProps[];
 };
 
 export const getModelById = async (id: number): Promise<ModelProps> => {

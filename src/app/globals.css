@@ -137,10 +137,10 @@
 }
 
 .sidebar_nav {
-  @apply duration-300 transition-all border-l-2 border-transparent block font-medium text-nowrap;
+  @apply duration-300 transition-all border-l-2 border-transparent block font-medium text-nowrap w-full text-left;
 }
 
-.sidebar_nav.active,
-.sidebar_nav:hover {
-  @apply text-[#F77429]! border-[#F77429]! pl-3.5;
+.sidebar_nav:hover,
+.sidebar_nav.active {
+  @apply text-[#F77429]! border-[#F77429]! bg-accent;
 }
