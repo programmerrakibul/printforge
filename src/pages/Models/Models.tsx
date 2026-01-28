@@ -21,11 +21,11 @@ import { useRouter } from "next/navigation";
 import { type JSX } from "react";
 
 type ModelsProps = {
-  categories: CategoryProps[];
-  models: ModelProps[];
+  categories: CategoryProps[] | [];
+  models: ModelProps[] | [];
 };
 
-const Models = ({ categories, models }: ModelsProps): JSX.Element => {
+const Models = ({ categories = [], models = [] }: ModelsProps): JSX.Element => {
   const router = useRouter();
 
   return (

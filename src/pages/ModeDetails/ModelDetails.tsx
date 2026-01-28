@@ -9,7 +9,14 @@ import Link from "next/link";
 import { type JSX } from "react";
 
 const ModelDetails = ({ model }: { model: ModelProps }): JSX.Element => {
-  const { name, description, category, dateAdded, image, likes } = model;
+  const {
+    name,
+    description,
+    category,
+    dateAdded = new Date().toISOString(),
+    image,
+    likes,
+  } = model || {};
 
   return (
     <>
