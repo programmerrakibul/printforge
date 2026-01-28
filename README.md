@@ -74,8 +74,8 @@ src/
 ├── app/                 # Next.js App Router pages
 ├── components/          # Reusable UI components
 │   ├── shared/         # Shared components (Navbar)
-│   └── ui/             # UI primitives and styled components
-│   ├── pages/              # Page components
+│   ├── ui/             # UI primitives and styled components
+│   └── pages/          # Page components
 ├── data/               # Static data files
 ├── lib/                # Utility functions
 └── services/           # API and service functions
