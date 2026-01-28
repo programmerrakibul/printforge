@@ -1,7 +1,6 @@
-import { Library, Users, Download, type LucideIcon } from "lucide-react";
+import { Library, Users, Download } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Image from "next/image";
-import { type JSX } from "react";
 import {
   Card,
   CardDescription,
@@ -9,6 +8,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+
+import type { JSX } from "react";
+import type { LucideIcon } from "lucide-react";
 
 type FeatureProps = {
   id: string;

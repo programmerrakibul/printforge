@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Container from "@/components/ui/Container";
 import Image from "next/image";
+
 import { type JSX } from "react";
 
 const Home = (): JSX.Element => {

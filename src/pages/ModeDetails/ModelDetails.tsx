@@ -1,11 +1,11 @@
 import { Badge } from "@/components/ui/badge";
 import Container from "@/components/ui/Container";
-
-import { type ModelProps } from "@/services/api";
 import { format } from "date-fns";
 import { Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+
+import { type ModelProps } from "@/services/api";
 import { type JSX } from "react";
 
 const ModelDetails = ({ model }: { model: ModelProps }): JSX.Element => {
