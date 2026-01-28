@@ -75,9 +75,9 @@ src/
 ├── components/          # Reusable UI components
 │   ├── shared/         # Shared components (Navbar)
 │   └── ui/             # UI primitives and styled components
+│   ├── pages/              # Page components
 ├── data/               # Static data files
 ├── lib/                # Utility functions
-├── pages/              # Page components
 └── services/           # API and service functions
 ```
 
