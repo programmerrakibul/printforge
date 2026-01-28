@@ -1,8 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PrintForge
+
+Your go-to platform for 3D printing files. Discover what's possible with 3D
+printing and join our community of creators exploring a vast library of
+user-submitted models.
+
+## Features
+
+- **Extensive Model Library**: Browse through 50+ 3D printing models across 10
+  different categories
+- **Category Filtering**: Organized models by categories including:
+  - 3D Printer parts and upgrades
+  - Art and decorative pieces
+  - Educational models
+  - Fashion accessories
+  - Hobby & DIY projects
+  - Household items
+  - Miniatures for gaming
+  - Props & Cosplay
+  - Tools and utilities
+  - Toys & Games
+- **Model Details**: View detailed information, likes, and descriptions for each
+  model
+- **Responsive Design**: Optimized for desktop and mobile viewing
+- **Modern UI**: Built with Tailwind CSS and Radix UI components
+
+## Tech Stack
+
+- **Framework**: Next.js 16.1.4 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS 4.0
+- **UI Components**: Radix UI primitives
+- **Icons**: Lucide React
+- **Font**: Geist (Google Fonts)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
@@ -14,23 +65,36 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/                 # Next.js App Router pages
+├── components/          # Reusable UI components
+│   ├── shared/         # Shared components (Navbar)
+│   └── ui/             # UI primitives and styled components
+├── data/               # Static data files
+├── lib/                # Utility functions
+├── pages/              # Page components
+└── services/           # API and service functions
+```
 
-## Learn More
+## Available Scripts
 
-To learn more about Next.js, take a look at the following resources:
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is private and not licensed for public use.
