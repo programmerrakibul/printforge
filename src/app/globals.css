@@ -135,3 +135,12 @@
 .nav_link.active {
   @apply text-[#F77429]! border-[#F77429];
 }
+
+.sidebar_nav {
+  @apply duration-300 transition-all border-l-2 border-transparent block font-medium text-nowrap;
+}
+
+.sidebar_nav.active,
+.sidebar_nav:hover {
+  @apply text-[#F77429]! border-[#F77429]! pl-3.5;
+}

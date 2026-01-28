@@ -38,13 +38,22 @@ const Navbar = (): JSX.Element => {
     <>
       <Container>
         <NavigationMenu className="justify-between max-w-full py-3">
-          <Link href={"/"} className="w-37.5 block">
+          <Link href={"/"} className="md:w-37.5 block">
             <Image
-              src="/logo_light.png"
+              src="/printforge-logo.svg"
               alt="PrintForge Logo"
               width={240}
               height={61}
               loading="eager"
+              className="hidden md:block"
+            />
+            <Image
+              src="/printforge-logo-icon.svg"
+              alt="PrintForge Logo"
+              width={30}
+              height={30}
+              loading="eager"
+              className="md:hidden"
             />
           </Link>
           <NavigationMenuList className="gap-5">
