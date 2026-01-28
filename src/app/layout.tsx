@@ -15,7 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PrintForge",
+  title: {
+    template: "%s | PrintForge",
+    default: "PrintForge",
+  },
   description: "Discover what’s possible with 3D printing",
 };
 

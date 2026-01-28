@@ -1,7 +1,12 @@
 import Models from "@/components/pages/Models/Models";
 import { getAllModels, getCategories } from "@/services/api";
 
+import { type Metadata } from "next";
 import type { JSX } from "react";
+
+export const metadata: Metadata = {
+  title: "3D Models",
+};
 
 const page = async ({
   searchParams,
